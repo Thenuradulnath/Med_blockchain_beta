@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Medical Record</title>
+</head>
+<body>
+    <h1>Upload Medical File</h1>
+    <form action="/upload-file-form" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if ipfs_hash %}
+        <p><strong>File uploaded!</strong></p>
+        <p>IPFS Hash: {{ ipfs_hash }}</p>
+        <p>View: <a href="https://ipfs.io/ipfs/{{ ipfs_hash }}" target="_blank">IPFS Gateway</a></p>
+    {% endif %}
+</body>
+</html>
+{% if status %}
+    <p><strong>{{ status }}</strong></p>
+{% endif %}

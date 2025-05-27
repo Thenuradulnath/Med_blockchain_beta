@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Requests</title>
+</head>
+<body>
+    <h1>Doctor: Request Access</h1>
+    <form method="POST" action="/access">
+        <input type="hidden" name="action" value="request">
+        <label>Record ID:</label><br>
+        <input type="number" name="record_id" required><br>
+        <label>Your Ethereum Address:</label><br>
+        <input type="text" name="requester" required><br><br>
+        <button type="submit">Request Access</button>
+    </form>
+
+    <hr>
+
+    <h1>Patient: Grant Access</h1>
+    <form method="GET" action="/access">
+        <label>Your Ethereum Address:</label><br>
+        <input type="text" name="patient" required><br>
+        <button type="submit">View Pending Requests</button>
+    </form>
+
+    {% if requests %}
+    <h2>Pending Access Requests</h2>
+    <ul>
+        {% for r in requests %}
+            <li>
+                Record {{ r.record_id }} requested by {{ r.requester }}
+                <form method="POST" action="/access" style="display:inline;">
+                    <input type="hidden" name="action" value="grant">
+                    <input type="hidden" name="record_id" value="{{ r.record_id }}">
+                    <input type="hidden" name="requester" value="{{ r.requester }}">
+                    <input type="hidden" name="patient" value="{{ patient }}">
+                    <button type="submit">Grant</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>No pending requests.</p>
+    {% endif %}
+
+
+</body>
+</html>

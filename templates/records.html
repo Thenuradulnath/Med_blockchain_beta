@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Medical Records</title>
+</head>
+<body>
+    <h1>View Medical Records</h1>
+
+    <form action="/view-records" method="get">
+        <label for="address">Your Ethereum Address:</label><br>
+        <input type="text" id="address" name="address" required>
+        <button type="submit">View Records</button>
+    </form>
+
+    {% if records %}
+        <h2>Accessible Records:</h2>
+        <ul>
+        {% for record in records %}
+            <li>
+                <strong>Record ID:</strong> {{ record.id }}<br>
+                <strong>Patient:</strong> {{ record.patient }}<br>
+                <strong>IPFS:</strong> <a href="https://ipfs.io/ipfs/{{ record.metadata }}" target="_blank">{{ record.metadata }}</a><br>
+                <strong>Shared:</strong> {{ record.isShared }}
+            </li>
+            <hr>
+        {% endfor %}
+        </ul>
+    {% elif records is not none %}
+        <p>No records available for this address.</p>
+    {% endif %}
+</body>
+</html>
+

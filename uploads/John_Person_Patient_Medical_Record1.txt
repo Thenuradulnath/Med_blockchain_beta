@@ -1,0 +1,37 @@
+Patient Medical Record
+Patient Name: John Person
+Date of Birth: 04/12/1983
+Age: 42
+Sex: Male
+Patient ID: 2025-001276
+Marital Status: Married
+Occupation: Civil Engineer
+Address: 128 Newbridge Avenue, Melbourne, VIC 3000
+Phone Number: (03) 9428 3311
+Emergency Contact: Lisa Harper (Wife), 0431 223 567
+
+
+Past Medical History (PMH)
+Hypertension – Diagnosed 2018, managed with medication
+
+Hyperlipidemia – Diagnosed 2020
+
+
+Social History
+Non-smoker
+
+Drinks 1–2 glasses of wine per week
+
+Exercises irregularly (once weekly)
+
+Diet: High in processed foods, low fiber intake
+
+Allergies
+Penicillin (rash)
+
+No food or environmental allergies reported
+
+Physician Signature:
+Dr. Amelia Tran, MBBS, FRACP
+Melbourne General Hospital
+Date: 2025-05-20
